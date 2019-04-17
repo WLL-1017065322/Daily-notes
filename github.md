@@ -1,3 +1,7 @@
+
+
+
+
 怎么传文件：
 
 自从使用github以来，一直都是在[github网站](https://link.jianshu.com?t=https://github.com/)在线上传文件到仓库中，但是有时因为网络或者电脑的原因上传失败。最重要的原因是我习惯本地编辑，完成以后再一起上传github。看过了几个教程，总结出最适合自己的比较简单的方法。
@@ -232,14 +236,20 @@ git remote add origin https://github.com/hanyuntao/text.git
 
 
 
-
-
-
-
-
-
-
-
-
-
 问题：
+
+![1555467293943](1555467293943.png)
+
+
+
+解决方案:
+
+
+
+**命令行中输入:**
+
+**git pull--rebase origin master**
+
+
+
+https://blog.csdn.net/crazydony/article/details/51983343
