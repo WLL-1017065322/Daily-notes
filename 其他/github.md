@@ -1,6 +1,10 @@
 
 
+git add .
+
 `git commit -m "提交文件"`
+
+
 
 怎么传文件：
 
