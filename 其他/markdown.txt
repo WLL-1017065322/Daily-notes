@@ -1,0 +1,59 @@
+====常用快捷键
+加粗： Ctrl/Cmd + B
+标题： Ctrl/Cmd + H
+插入链接： Ctrl/Cmd + K
+插入代码： Ctrl/Cmd + Shift + C
+行内代码： Ctrl/Cmd + Shift + K
+插入图片： Ctrl/Cmd + Shift + I
+无序列表： Ctrl/Cmd + Shift + L
+撤销： Ctrl/Cmd + Z
+一级标题：快捷键为Crtl + 1，以此类推
+
+====块元素
+
+==换行符
+
+在markdown中，段落由多个空格分隔。在Typora中，只需回车即可创建新段落。
+
+==标题级别
+# 一级标题， 快捷键为Crtl + 1
+## 二级标题，快捷键为Crtl + 2
+###### 六级标题，快捷键为Crtl + 6
+
+==引用文字
+> + 空格 + 引用文字
+
+==清单
+输入 列表内容 将创建一个无序列表，该符号可以替换为+或-。
+输入1. 列表内容 将创建一个有序列表，其markdown源代码如下：
+无序列表
+* AA
+* BB
+* CC
+有序列表
+1.AA
+2.BB
+3.CC
+任务列表
+- [ ] 不勾选
+- [x] 勾选
+
+==代码块
+在Typora中输入””” + 回车，并在后面选择一个语言名称即可语法高亮。
+语法高亮:
+\
+
+==数学表达式
+
+输入$$，然后按“回车”键，如下：
+$$
+\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \
+\frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \
+\frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0 \
+\end{vmatrix}
+
+
+==表
+输入`| 表头1 | 表头2 |`并回车。即可将创建一个包含两列的表，然后就像操作Word文档一样设置表格即可，没必要知道Markdown的复杂语法，因为这些语法会由Typora自动生成。
+
