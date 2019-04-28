@@ -1,6 +1,222 @@
+如何配置多个git，使可以同时使用不同的github库，或者类似马云的库
 
+<https://feitianbenyue.iteye.com/blog/2376791>
 
+基本知识：
 
+# git config配置文件
+
+2012年02月20日 15:48:29 [shuhuai007](https://me.csdn.net/shuhuai007) 阅读数：109090
+
+*一.Git*已经在你的系统中了，你会做一些事情来客户化你的*Git*环境。你只需要做这些设置一次；即使你升级了，他们也会绑定到你的环境中。你也可以在任何时刻通过运行命令来重新更改这些设置。
+
+ *Git*有一个工具被称为*git config*，它允许你获得和设置配置变量；这些变量可以控制*Git*的外观和操作的各个方面。这些变量可以被存储在三个不同的位置：
+
+　　*1./etc/gitconfig* 文件：包含了适用于系统所有用户和所有库的值。如果你传递参数选项*’--system’* 给 *git config*，它将明确的读和写这个文件。
+
+　　*2.~/.gitconfig* 文件 ：具体到你的用户。你可以通过传递*--global* 选项使*Git* 读或写这个特定的文件。
+
+　　3.位于*git*目录的*config*文件 *(也就是 .git/config) ：无论你当前在用的库是什么，特定指向该单一的库。每个级别重写前一个级别的值。因此，在.git/config*中的值覆盖了在*/etc/gitconfig*中的同一个值。
+
+　　在*Windows*系统中，*Git*在*$HOME*目录中查找*.gitconfig*文件（对大多数人来说，位于*C:\Documents and Settings$USER*下）。它也会查找*/etc/gitconfig*，尽管它是相对于*Msys* 根目录的。这可能是你在*Windows*中运行安装程序时决定安装*Git*的任何地方。
+
+二.你的标识*(Your Identity)*
+
+2.1　当你安装*Git*后首先要做的事情是设置你的用户名称和*e-mail*地址。这是非常重要的，因为每次*Git*提交都会使用该信息。它被永远的嵌入到了你的提交中：
+
+　　*$ git config --global user.name "John Doe"*
+
+　　*$ git config --global user.email johndoe@example.com*
+
+　　重申一遍，你只需要做一次这个设置。如果你传递了 *--global* 选项，因为*Git*将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或*e-mail*地址，你可以在该项目中运行该命令而不要*--global*选项。
+
+2.2 你的编辑器*(Your Editor)*
+
+　　现在，你的标识已经设置，你可以配置你的缺省文本编辑器，*Git*在需要你输入一些消息时会使用该文本编辑器。缺省情况下，*Git*使用你的系统的缺省编辑器，这通常可能是*vi* 或者 *vim*。如果你想使用一个不同的文本编辑器，例如*Emacs*，你可以做如下操作：
+
+　　*$ git config --global core.editor emacs*
+
+2.3 你的比较工具*(Your Diff Tool)*
+
+　　另外一个你可能需要配置的有用的选项是缺省的比较工具它用来解决合并时的冲突。例如，你想使用*vimdiff:*
+
+　　*$ git config --global merge.tool vimdiff*
+
+　　*Git*可以接受*kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge,* 和 *opendiff*作为有效的合并工具。你也可以设置一个客户化的工具；查看第*7*章获得更多关于此的信息。
+
+2.4 检查你的设置*(Checking Your Settings)*
+
+　　如果你想检查你的设置，你可以使用 *git config --list* 命令来列出*Git*可以在该处找到的所有的设置*:*
+
+　　*$ git config --list*
+
+　　*user.name=Scott Chacon*
+
+　　*user.email=schacon@gmail.com*
+
+　　*color.status=auto*
+
+　　*color.branch=auto*
+
+　　*color.interactive=auto*
+
+　　*color.diff=auto*
+
+　　*...*
+
+　　你可能会看到一个关键字出现多次，这是因为*Git*从不同的文件中*(*例如：*/etc/gitconfig*以及*~/.gitconfig)*读取相同的关键字。 在这种情况下，对每个唯一的关键字，*Git*使用最后的那个值。
+
+　　你也可以查看*Git*认为的一个特定的关键字目前的值，使用如下命令 *git config {key}:*
+
+　　*$ git config user.name*
+
+　　*Scott Chacon*
+
+2.5 获取帮助(Getting help)
+
+　　如果当你在使用*Git*时需要帮助，有三种方法可以获得任何git命令的手册页*(manpage)*帮助信息*:*
+
+　　*$ git help*
+
+　　*$ git --help*
+
+　　*$ man git-*
+
+　　例如，你可以运行如下命令获取对*config*命令的手册页帮助*:*
+
+　　*$ git help config*
+
+　　这些命令非常友好，因为你可以在任何地方存取他们，即使非在线状态。如果手册页和本书仍然不足而你需要个人的帮助，你可以试着使用*Freenode IRCServer*上的*#git*或*#github* 频道*(irc.freenode.net)*。这些频道会定期由数百个对*Git*非常熟悉的专业人士所维护，他们会非常乐意帮助你。
+
+2.6 总结(Summary)
+
+　　你应该对*Git*是什么以及*Git*与你可能使用的其它*CVCS*之间的不同有了一个基本的了解。你也应当在你的系统中有了一个具有你个人标识的可以工作的*Git*版本。是时候来学习一些*Git*的基本知识了。
+
+我假设你开始在一个目录中工作，并没有在那里使用git。以下应该与git bash一起使用：
+
+```
+cd "path to your repo"
+git init
+git add . # if you want to commit everything. Otherwise use .gitconfig files
+git commit -m "initial commit" # If you change anything, you can add and commit again...
+```
+
+要添加遥控器，只需这样做
+
+```
+git remote add origin https://...
+git remote show origin # if everything is ok, you will see your remote
+git push -u origin master # assuming your are on the master branch.
+```
+
+该 `-u` 设置上游引用，git知道从哪里去 `fetch`/`pull` 以及在哪里 `push` 在将来。
+
+# 常见错误：
+
+## fatal: No such remote 'origin'
+
+[![1556203446246](https://github.com/WLL-1017065322/Daily-notes-/raw/master/%E5%85%B6%E4%BB%96/1556203446246.png)](https://github.com/WLL-1017065322/Daily-notes-/blob/master/%E5%85%B6%E4%BB%96/1556203446246.png)
+
+如果输入
+
+$ git remote add origin [git@github.com](mailto:git@github.com):djqiang（github帐号名）/gitdemo（项目名）.git 提示出错信息：fatal: remote origin already exists. 解决办法如下： 1、先输入$ git remote rm origin
+
+```
+2、再输入$ git remote add origin
+```
+
+[git@github.com](mailto:git@github.com):djqiang/gitdemo.git 就不会报错了！ 3、如果输入$ git remote rm origin 还是报错的话，error: Could not remove config section 'remote.origin'. 我们需要修改gitconfig文件的内容 4、找到你的github的安装路径，我的是C:\Users\ASUS\AppData\Local\GitHub\PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8\etc 5、找到一个名为gitconfig的文件，打开它把里面的[remote "origin"]那一行删掉就好了！
+
+```
+如果输入$ ssh -T
+```
+
+[git@github.com](mailto:git@github.com) 出现错误提示：Permission denied (publickey).因为新生成的key不能加入ssh就会导致连接不上github。 解决办法如下： 1、先输入$ ssh-agent，再输入$ ssh-add ~/.ssh/id_key，这样就可以了。 2、如果还是不行的话，输入ssh-add ~/.ssh/id_key 命令后出现报错Could not open a connection to your authentication agent.解决方法是key用Git Gui的ssh工具生成，这样生成的时候key就直接保存在ssh中了，不需要再ssh-add命令加入了，其它的user，token等配置都用命令行来做。 3、最好检查一下在你复制id_rsa.pub文件的内容时有没有产生多余的空格或空行，有些编辑器会帮你添加这些的。
+
+```
+如果输入$ git push origin master
+提示出错信息：error:failed to push som refs to .......
+解决办法如下：
+1、先输入$ git pull origin master //先把远程服务器github上面的文件拉下来
+2、再输入$ git push origin master
+3、如果出现报错 fatal: Couldn't find remote ref master或者fatal: 'origin' does not appear to be a git repository以及fatal:
+```
+
+Could not read from remote repository. 4、则需要重新输入$ git remote add origin [git@github.com](mailto:git@github.com):djqiang/gitdemo.git
+
+```
+使用git在本地创建一个项目的过程
+$ makdir ~/hello-world    //创建一个项目hello-world
+$ cd ~/hello-world       //打开这个项目
+$ git init             //初始化 
+$ touch README
+$ git add README        //更新README文件
+$ git commit -m 'first commit'     //提交更新，并注释信息“first commit” 
+$ git remote add origin 
+```
+
+[git@github.com](mailto:git@github.com):defnngj/hello-world.git //连接远程github项目
+$ git push -u origin master //将本地项目更新到github项目上去
+
+```
+gitconfig配置文件
+     Git有一个工具被称为git config，它允许你获得和设置配置变量；这些变量可以控制Git的外观和操作的各个方面。这些变量可以被存储在三个不同的位置：
+
+     1./etc/gitconfig 文件：包含了适用于系统所有用户和所有库的值。如果你传递参数选项’--system’ 给 git config，它将明确的读和写这个文件。
+
+     2.~/.gitconfig 文件 ：具体到你的用户。你可以通过传递--global 选项使Git 读或写这个特定的文件。
+     3.位于git目录的config文件 (也就是 .git/config) ：无论你当前在用的库是什么，特定指向该单一的库。每个级别重写前一个级别的值。因此，在.git/config中的值覆盖了在/etc/gitconfig中的同一个值。
+    在Windows系统中，Git在$HOME目录中查找.gitconfig文件（对大多数人来说，位于C:\Documents and Settings\$USER下）。它也会查找/etc/gitconfig，尽管它是相对于Msys 根目录的。这可能是你在Windows中运行安装程序时决定安装Git的任何地方。
+ 
+    配置相关信息：
+    2.1　当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：
+```
+
+　　$ git config --global user.name "John Doe"
+
+　　$ git config --global user.email
+
+[johndoe@example.com](mailto:johndoe@example.com)
+
+```
+   2.2    你的编辑器(Your Editor)
+```
+
+　　现在，你的标识已经设置，你可以配置你的缺省文本编辑器，Git在需要你输入一些消息时会使用该文本编辑器。缺省情况下，Git使用你的系统的缺省编辑器，这通常可能是vi 或者 vim。如果你想使用一个不同的文本编辑器，例如Emacs，你可以做如下操作：
+
+　　$ git config --global core.editor emacs
+
+```
+  2.3 检查你的设置(Checking Your Settings)
+```
+
+　　如果你想检查你的设置，你可以使用 git config --list 命令来列出Git可以在该处找到的所有的设置:
+
+　　$ git config --list
+
+```
+  你也可以查看Git认为的一个特定的关键字目前的值，使用如下命令 git config {key}:
+```
+
+　　$ git config user.name
+
+```
+  2.4 获取帮助(Getting help)
+```
+
+　　如果当你在使用Git时需要帮助，有三种方法可以获得任何git命令的手册页(manpage)帮助信息:
+
+　　$ git help
+
+　　$ git --help
+
+　　$ man git-
+
+　　例如，你可以运行如下命令获取对config命令的手册页帮助:
+
+　　$ git help config
+
+作者：dengjianqiang2011 来源：CSDN 原文：<https://blog.csdn.net/dengjianqiang2011/article/details/9260435> 版权声明：本文为博主原创文章，转载请附上博文链接！
 
 
 
@@ -443,3 +659,23 @@ failed to push some refs to 'https://github.com/CrazyDony/text.git' hint: Update
 git push -u origin master-f
 
 Counting objects: 35, done. Delta compression using up to 4 threads. Compressing objects: 100% (29/29), done. Writing objects: 100% (35/35), 10.15 KiB | 0 bytes/s, done. Total 35 (delta 5), reused 0 (delta 0) To https://github.com/CrazyDony/text.git  + aa70966...f64b22a master -> master (forced update) Branch master set up to track remote branch master from origin. 完成.
+
+
+
+
+
+ ! [rejected]        master -> master (non-fast-forward)
+
+### error: failed to push some refs to
+
+ 'https://github.com/WLL-1017065322/WLL-1017065322.github.io.git'
+
+
+
+![1556207982732](1556207982732.png)
+
+
+
+出现错误的主要原因是github中的README.md文件不在本地代码目录中
+
+git pull --rebase origin master
