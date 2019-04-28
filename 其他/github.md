@@ -4,6 +4,8 @@ git add .
 
 `git commit -m "提交文件"`
 
+git push -u origin master
+
 
 
 怎么传文件：
