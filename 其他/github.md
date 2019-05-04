@@ -252,7 +252,7 @@ git remote add origin https://github.com/hanyuntao/text.git
 
 
 
-问题：
+##### 问题：
 
 ![1555467293943](1555467293943.png)
 
@@ -267,5 +267,40 @@ git remote add origin https://github.com/hanyuntao/text.git
 **git pull --rebase origin master**
 
 
+
+原因：
+出现这个错误提示原因很简单，也就是一个先后顺序关系。
+
+解决办法：
+1、在你本地重新创建一个分支：git branch test （基于你要提交的分支）
+2、在将你要git push的分支git  checkout 到情景中提到的节点1
+3、git pull 将你同事的提交全部拉到本地
+4、再使用git cherry-pick从test分支将你的修改逐条的提交拉回来
+
+5、然后在使用git push origin HEAD将你的分支push到服务器
+
+
+
+有如下几种解决方法：  
+
+1.使用强制push的方法：
+
+**$ git push -u origin master -f** 
+
+这样会使远程修改丢失，一般是不可取的，尤其是多人协作开发的时候。  
+
+2.push前先将远程repository修改pull下来 
+
+$ git pull origin master   
+
+$ git push -u origin master  
+
+3.若不想merge远程和本地修改，可以先创建新的分支：
+
+$ git branch [name]
+
+然后push
+
+$ git push -u origin [name]
 
 https://blog.csdn.net/crazydony/article/details/51983343
