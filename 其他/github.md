@@ -6,6 +6,16 @@ git add .
 
 git push -u origin master
 
+git remote add origin https://github.com/WLL-1017065322/Daily-notes-.git
+
+文件返回：
+
+git log
+
+复制 hard
+
+git reset --hard 8d9e4e2330c421d9a333ce121158bfa11dd2782c
+
 
 
 怎么传文件：
