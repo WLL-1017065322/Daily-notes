@@ -487,3 +487,287 @@ git reset --hard HEAD@{1}
 
 
 ## 单页面demo1
+
+
+
+创建demo.vue
+
+vue serve demo.vue 
+
+
+
+上列表； 
+
+v-for     v-for="(item,index) in lists"   :key="index"
+
+choose（）  @click="choose(index)"   
+
+active 切换     :class="{active:index==current}"
+
+按钮；add（）
+
+   <button @click="add()"></button>
+
+下列表；
+
+v-for \<li v-for="(item,index) in targets" :key="index">{{item}}\</li>
+
+
+
+bug:
+
+1默认未选择，添加后，删除样式
+
+push后 this.current=‘’ ‘’
+
+![1556960388195](assets/1556960388195.png)
+
+2，连续点击添加空，
+
+![1556960462187](assets/1556960462187.png)
+
+完整代码：
+
+
+
+![1556960497180](assets/1556960497180.png)
+
+
+
+
+
+![1556960470972](assets/1556960470972.png)
+
+
+
+## 如何高仿别人的app？
+
+观察结构
+
+head 用了那些库
+
+js用了哪些库
+
+根据class，找到库
+
+source:
+
+
+
+移动端
+
+头部尾部，看到加载了那些库
+
+###### chrome 样式 格式化 format {}
+
+总结：
+
+
+
+![1556964476538](assets/1556964476538.png)
+
+
+
+
+
+## demo2
+
+
+
+
+
+vue ui 
+
+不保存预设
+
+![1556965366929](assets/1556965366929.png)
+
+
+
+添加div
+
+
+
+配置 router
+
+app.js
+
+
+
+
+
+### vuex
+
+
+
+![1556971514238](assets/1556971514238.png)
+
+
+
+### add.js
+
+
+
+add，传递数据到list，跨组件用vuex（引入，state，mutations）
+
+![1556971575022](assets/1556971575022.png)
+
+
+
+
+
+引入store
+
+改变store store.commit
+
+![  1556971666658](assets/1556971666658.png)
+
+![1556971740860](assets/1556971740860.png)
+
+
+
+
+
+list
+
+ 引入 store
+
+### list
+
+
+
+![1556993349093](assets/1556993349093.png)
+
+
+
+
+
+
+
+### login
+
+v-if:
+
+
+
+![1556997579786](assets/1556997579786.png)
+
+  
+
+
+
+![1556997555080](assets/1556997555080.png)
+
+![1556998628196](assets/1556998628196.png)
+
+![1556997524615](assets/1556997524615.png)
+
+
+
+
+
+![1556997603771](assets/1556997603771.png)
+
+密码校验：
+
+![1556997644413](assets/1556997644413.png)
+
+
+
+密码 text==》password
+
+![1556997729647](assets/1556997729647.png)
+
+
+
+点击登录清空 回到登录
+
+![1556997794641](assets/1556997794641.png)s
+
+
+
+
+
+验证：
+
+![1556997847299](assets/1556997847299.png)
+
+![1556997862484](assets/1556997862484.png)
+
+
+
+
+
+![1556997898206](assets/1556997898206.png)
+
+
+
+
+
+### 样式：
+
+home
+
+![1556997959994](assets/1556997959994.png)
+
+
+
+![1556998055563](assets/1556998055563.png)
+
+
+
+![1556998076431](assets/1556998076431.png)
+
+![1556998183479](assets/1556998183479.png)
+
+
+
+app.js
+
+![1556998026123](assets/1556998026123.png)
+
+
+
+
+
+router
+
+![1556998232055](assets/1556998232055.png)
+
+
+
+
+
+
+
+
+
+## 回顾：
+
+![1557000907943](assets/1557000907943.png)
+
+
+
+![1557000932590](assets/1557000932590.png)
+
+![1557000946515](assets/1557000946515.png)
+
+npm run build
+
+dist
+
+创建vue.config.js
+
+
+
+vue-cli的webpack
+
+环境变量
+
+https://cli.vuejs.org/zh/guide/webpack.html#简单的配置方式
+
+
+
+
+
+![1557002740749](assets/1557002740749.png)

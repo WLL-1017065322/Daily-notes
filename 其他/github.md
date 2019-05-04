@@ -1,3 +1,12 @@
+echo "# vue-demo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/WLL-1017065322/vue-demo.git
+git push -u origin master
+
+
+
 
 
 git add .
