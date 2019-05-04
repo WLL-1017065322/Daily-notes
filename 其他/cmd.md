@@ -18,3 +18,17 @@ mysql -u -root -p
 
 批量改后缀   cmd      ren *.html  *.php
 
+
+
+软换行：shift+回车
+
+cmd：type nul>文件名
+
+
+
+powershell:创建文件：
+
+ni 文件名 或者 NewItem 文件名
+
+
+
