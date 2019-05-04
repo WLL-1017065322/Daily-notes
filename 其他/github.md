@@ -8,7 +8,7 @@ git push -u origin master
 
 git remote add origin https://github.com/WLL-1017065322/Daily-notes-.git
 
-文件返回：
+文件返回：https://github.com/WLL-1017065322/Daily-notes-.git
 
 git log
 
@@ -264,7 +264,7 @@ git remote add origin https://github.com/hanyuntao/text.git
 
 **命令行中输入:**
 
-**git pull--rebase origin master**
+**git pull --rebase origin master**
 
 
 
