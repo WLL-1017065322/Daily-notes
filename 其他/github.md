@@ -6,7 +6,7 @@ git add .
 
 git push -u origin master
 
-git remote add origin https://github.com/WLL-1017065322/Daily-notes-.git
+git remote add origin https://github.com/WLL-1017065322/Daily-notes.git
 
 文件返回：https://github.com/WLL-1017065322/Daily-notes-.git
 
@@ -260,7 +260,7 @@ git remote add origin https://github.com/hanyuntao/text.git
 
 解决方案:
 
-
+缺少readme.md
 
 **命令行中输入:**
 
