@@ -313,3 +313,28 @@ $ git branch [name]
 $ git push -u origin [name]
 
 https://blog.csdn.net/crazydony/article/details/51983343
+
+
+
+
+
+## 删库
+
+
+
+1.点击下面的Settings，注意不是头像下拉菜单的settings
+
+![img](assets/20180227112516783.png)
+
+2.用滚轮或者拖动右侧滑动条往下滑到页面最底下，点击“Delete this repository”
+
+![img](assets/201802271127201.png)
+
+3.它会提示你“真的要删除吗？”之后，输入库名字hello-world，点击下方的I understand the consequences, delete this repository，会让你输入密码
+
+![img](assets/20180227113029264.png)
+
+4.之后新界面显示删除成功
+
+![img](assets/20180227113717607)
+
