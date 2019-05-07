@@ -679,3 +679,249 @@ Counting objects: 35, done. Delta compression using up to 4 threads. Compressing
 出现错误的主要原因是github中的README.md文件不在本地代码目录中
 
 git pull --rebase origin master
+
+
+
+
+
+
+
+# **Git SSH Key 生成及多个Git SSH Key 生成管理**
+
+
+
+
+
+### **单个.ssh文件rsa  rsa.pub生成：**
+
+
+
+**一 、**
+
+设置Git的user name和email：
+
+$ git config --global user.name "zanyang"
+
+$ git config --global user.email "zanyang@gmail.com"
+
+
+
+
+
+![1557167719137](assets/1557167719137.png)
+
+
+
+**二、生成SSH密钥过程：**
+
+1.查看是否已经有了ssh密钥：cd ~/.ssh
+
+如果没有密钥则不会有此文件夹，有则备份删除
+
+2.生存密钥：
+
+$ ssh-keygen -t rsa -C “******.com”
+
+按3个回车，密码为空。
+
+Your identification has been saved in /home/tekkub/.ssh/id_rsa.
+
+Your public key has been saved in /home/tekkub/.ssh/id_rsa.pub.
+
+The key fingerprint is:
+
+………………
+
+最后得到了两个文件：id_rsa和id_rsa.pub
+
+
+
+
+
+![1557167738957](assets/1557167738957.png)
+
+
+
+3.添加密钥到ssh：ssh-add 文件名
+
+$ ssh-add ~/.ssh/id_rsa
+
+需要之前输入密码。
+
+4.在github上添加ssh密钥，这要添加的是“id_rsa.pub”里面的公钥。
+
+打开[https://github.com/](https://link.jianshu.com?t=https://github.com/settings/ssh)，登陆，然后添加ssh。
+
+5.[测试](https://link.jianshu.com?t=http://lib.csdn.net/base/softwaretest)：ssh git@github.com
+
+The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.
+
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+
+Are you sure you want to continue connecting (yes/no)? yes
+
+Warning: Permanently added ‘github.com,207.97.227.239′ (RSA) to the list of known hosts.
+
+ERROR: Hi tekkub! You’ve successfully authenticated, but GitHub does not provide shell access
+
+Connection to github.com closed.
+
+**三、 开始使用github**
+
+1.获取源码：
+
+$ git clone git@github.com:billyanyteen/github-services.git
+
+2.这样你的机器上就有一个repo了。
+
+3.git于svn所不同的是git是分布式的，没有服务器概念。所有的人的机器上都有一个repo，每次提交都是给自己机器的repo
+
+仓库初始化：
+
+git init
+
+生成快照并存入项目索引：
+
+git add
+
+文件,还有git rm,git mv等等…
+
+项目索引提交：
+
+git commit
+
+4.协作编程：
+
+将本地repo于远程的origin的repo合并，
+
+推送本地更新到远程：
+
+git push origin master
+
+更新远程更新到本地：
+
+git pull origin master
+
+补充：
+
+添加远端repo：
+
+$ git remote add upstream  你的git地址
+
+
+
+##  **多个ssh key管理：**  
+
+
+
+**当有多个git账号的时候，比如一个github，用于自己进行一些开发活动，再来一个gitlab，一般是公司内部的git。这两者你的邮箱如果不同的话，就会涉及到一个问题，生成第二个git的key的时候会覆盖第一个的key，导致必然有一个用不了。**
+
+**我们可以在~/.ssh目录下新建一个config文件配置一下，就可以解决问题**
+
+**具体步骤**
+
+生成第一个ssh key(这里我用于github，用的gmail邮箱)
+
+ssh-keygen -t rsa -C"yourmail@gmail.com"
+
+**这里不要一路回传，让你选择在哪里选择存放key的时候写个名字，比如id_rsa_github，之后的两个可以回车。**
+
+完成之后我们可以看到~/.ssh目录下多了两个文件
+
+
+
+
+
+![1557167749863](assets/1557167749863.png)
+
+
+
+生成第二个ssh key（这里我用于gitlab，用的是公司邮箱）
+
+ssh-keygen -t rsa -C"yourmail@gmail.com"
+
+还是一样不要一路回车，在第一个对话的时候继续写个名字，比如*id_rsa_gitlab*,之后的两个可以回车。
+
+完成之后我们可以看到如2中图所标记，一样出现两个文件。（一个公钥一个私钥）
+
+打开ssh-agent
+
+这里如果你用的github官方的bash，ssh-agent -s,如果是其他的，比如msysgit,eval $(ssh-agent -s)
+
+**添加私钥**
+
+ssh-add ~/.ssh/id_rsa_github 
+
+ssh-add ~/.ssh/id_rsa_gitlab
+
+**创建并修改config文件**
+
+**在windows下新建一个txt文本，然后将名字后缀一起改成config即可**
+
+在bash下的话直接touch config即可。
+
+添加一下内容
+
+\# gitlab
+
+Host git.iboxpay.com
+
+​       HostName git.iboxpay.com//这里填你们公司的git网址即可
+
+​       PreferredAuthentications publickey 
+
+​       IdentityFile ~/.ssh/id_rsa_gitlab 
+
+​       User zanyang
+
+\# github
+
+​        Host github.comHostName github.com
+
+​        PreferredAuthentications publickey
+
+​        IdentityFile ~/.ssh/id_rsa_github
+
+​        User L
+
+在github和gitlab上添加公钥即可，这里不再多说。
+
+
+
+**测试：**
+
+**$ ssh -T git@github.com**
+
+**PS:如果到这里你没有成功的话，别急，教你解决问题的终极办法--debug**
+
+比如测试github，ssh -vT git@github.com
+
+-v 是输出编译信息，然后根据编译信息自己去解决问题吧。就我自己来说一般是config里的host那块写错了
+
+补充一下
+
+如果之前有设置全局用户名和邮箱的话，需要unset一下
+
+git config --global--unsetuser.name
+
+git config --global--unsetuser.email
+
+然后在不同的仓库下设置局部的用户名和邮箱
+
+比如在公司的repository下
+
+git config user.name "yourname"  
+
+git config user.email "youremail"
+
+在自己的github的仓库在执行刚刚的命令一遍即可。
+
+**这样就可以在不同的仓库，已不同的账号登录。**
+
+作者：Mr_不靠谱_先森
+
+链接：https://www.jianshu.com/p/12182e857bea
+
+来源：简书
+
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。

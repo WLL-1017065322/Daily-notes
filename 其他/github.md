@@ -23,7 +23,7 @@ git log
 
 复制 hard
 
-git reset --hard 8d9e4e2330c421d9a333ce121158bfa11dd2782c
+git reset --hard 8d9e4e2330c421d9a333ce12 1158bfa11dd2782c
 
 
 
@@ -338,3 +338,97 @@ https://blog.csdn.net/crazydony/article/details/51983343
 
 ![img](assets/20180227113717607)
 
+
+
+
+
+## 新建分支
+
+### git
+
+一：查看
+
+1.查看本地分支
+
+　　git branch
+
+　　![img](assets/1027015-20180722103312649-647183336.png)
+
+2.查看远程分支
+
+　　git branch -r
+
+　　![img](assets/1027015-20180722103348008-425139004.png)
+
+3.查看所有的分支
+
+　　git branch -a
+
+　　![img](assets/1027015-20180722103608976-1010616772.png)
+
+二：创建分支
+
+1.创建本地分支  git branch   111
+
+　　![img](assets/1027015-20180722103846451-1943295721.png)
+
+2.切换到新创建的分支 git checkout  111
+
+　　![img](assets/1027015-20180722103901545-1252496175.png)
+
+3.将新分支push到github git push origin 111
+
+　　![img](assets/1027015-20180722103925532-427531537.png) 
+
+三：删除分支
+
+1.删除本地分支 git branch -D r
+
+git branch -d Chapater8 
+
+　　![img](assets/1027015-20180722104930082-1422485847.png)
+
+2，删除远程分支
+
+git push origin --delete index-swiper
+
+四 git pull
+
+取回远程主机某个分支的更新，再与本地的指定分支合并，它的完整格式稍稍有点复杂。
+
+$ git pull <远程主机名> <远程分支名>:<本地分支名>
+
+比如，要取回`origin`主机的`next`分支，与本地的`master`分支合并，需要写成下面这样 -
+
+```shell
+$ git pull origin next:master
+
+
+Shell
+```
+
+如果远程分支(`next`)要与当前分支合并，则冒号后面的部分可以省略。上面命令可以简写为：
+
+```shell
+$ git pull origin next
+
+
+Shell
+```
+
+上面命令表示，取回`origin/next`分支，再与当前分支合并。实质上，这等同于先做`git fetch`，再执行`git merge`。
+
+```shell
+$ git fetch origin
+$ git merge origin/next
+```
+
+
+
+### github：		 		
+
+如何在 GitHub 的项目中创建一个分支呢？ 其实很简单啦，直接点击 Branch，然后在弹出的文本框中添加自己的 Branch Name 然后点击蓝色的Create branch就可以了，这样一来，你这个项目就有2个分支了（master 和 reademe-edits）。
+
+[![GitHub(assets/0060XF5Hgy72AcrEccP3b&690.jpg)](http://s12.sinaimg.cn/mw690/0060XF5Hgy72AcrEccP3b&690)](http://photo.blog.sina.com.cn/showpic.html#blogid=1487b6f6d0102wgtc&url=http://album.sina.com.cn/pic/0060XF5Hgy72AcrEccP3b)
+
+注：由上面的分支合并的流程图可以发现，1 个库可以有多个分支并行的进行开发，但是最后只有 1 个会被 merge 进来，因此当某一个分支被合并到进 master 分支后，其他的并行分支的提交都会被是作为冲突 conflict，解决这个冲突的唯一办法就是，每次做修改之前，记得更新版本库，使自己的分支与 master 分支保持一致。
