@@ -432,3 +432,81 @@ $ git merge origin/next
 [![GitHub(assets/0060XF5Hgy72AcrEccP3b&690.jpg)](http://s12.sinaimg.cn/mw690/0060XF5Hgy72AcrEccP3b&690)](http://photo.blog.sina.com.cn/showpic.html#blogid=1487b6f6d0102wgtc&url=http://album.sina.com.cn/pic/0060XF5Hgy72AcrEccP3b)
 
 注：由上面的分支合并的流程图可以发现，1 个库可以有多个分支并行的进行开发，但是最后只有 1 个会被 merge 进来，因此当某一个分支被合并到进 master 分支后，其他的并行分支的提交都会被是作为冲突 conflict，解决这个冲突的唯一办法就是，每次做修改之前，记得更新版本库，使自己的分支与 master 分支保持一致。
+
+
+
+
+
+# **使用github子目录部署hexo个人博客**
+
+
+
+
+
+## 一、安装环境
+
+**1. nodejs**
+ 安装：[官网下载页](https://nodejs.org/en/download/)
+ 验证：![node -v,](assets/math.svg) npm -v 查看node及npm的版本
+ **2. git**
+ 安装：[官网下载页](https://git-scm.com/downloads)
+ 验证：![git --version 查看git的版本 **3. hexo-cli** 安装：](assets/math-1557633441195.svg) cnpm install hexo-cli -g
+ 验证：$ hexo -v 检查hexo的版本
+
+## 二、hexo-cli脚手架的使用
+
+```
+$ cd test  #打开存放项目的目录
+$ hexo init my-blog  #下载模版项目
+$ cd my-blog  #打开模板项目目录
+$ cnpm install  #下载相关依赖的包
+$ cnpm install hexo-deployer-git --save  #安装扩展包
+$ hexo generate / hexo g  #生成静态文件
+$ hexo server / hexo s  [-i 127.0.0.1] [-p 4000]#默认在本地的4000端口启动项目
+control + C  #终止运行
+$ hexo deploy / hexo d  #将.deploy目录部署 [到Github]
+$ hexo g -d / hexo d -g  #生成完毕后自动部署
+```
+
+## 三、操作步骤
+
+#### 1. github操作
+
+- github新建项目，名称为blog
+
+- 
+
+  
+
+   修改已创建好的hexo项目中的_config.yml文件
+
+  
+
+  ![1557633612747](assets/1557633612747.png)
+
+  
+
+  
+
+  ![1557633624386](assets/1557633624386.png)
+
+  
+
+- 终端执行 $ hexo g -d
+
+- 打开github我们的项目地址
+
+- 选择setting
+
+- 找到GitHub Pages勾选master branch
+
+
+
+
+
+# **在github网页版里新建文件夹，而是不是文件，是文件夹！！！**
+
+
+
+**只需在images后面加个/即可！**
+
