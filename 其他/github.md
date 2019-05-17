@@ -92,8 +92,8 @@ git reset --hard 8d9e4e2330c421d9a333ce12 1158bfa11dd2782c
 在打开的GIt Bash中输入以下命令（用户和邮箱为你github注册的账号和邮箱）
 
 ```
-$ git config --global user.name "hanyuntao"
-$ git config --global user.email "hanyuntaocn@163.com"
+$ git config --global user.name "WLL-1017065322"
+$ git config --global user.email "1017065322@qq.com"
 ```
 
 
@@ -117,7 +117,7 @@ Paste_Image.png
 如果没有密钥，则通过
 
 ```
-$ ssh-keygen -t rsa -C "hanyuntaocn@163.com"
+$ ssh-keygen -t rsa -C "1017065322@qq.com"
 ```
 
 生成，生成过程中一路按3次回车键就好了。（默认路径，默认没有密码登录）
