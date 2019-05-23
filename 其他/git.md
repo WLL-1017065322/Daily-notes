@@ -230,7 +230,7 @@ gitconfig配置文件
 
 
 
-## 常用 Git 命令清单
+# 常用 Git 命令清单
 
 [分享按钮](http://www.bshare.cn/share)
 
@@ -587,23 +587,7 @@ git init就可以了！
 
 
 
-## 在github上传项目遇到的问题(error: failed to push some refs to 'https://github.com/CrazyDony/text.git')
-
-2016年07月21日 17:17:43
-
-slowdony
-
-阅读数：12282
-
-更多
-
- 								个人分类： 																[解决问题(bug)																](https://blog.csdn.net/CrazyDony/article/category/2722717) 							
-
- 									
-
- 	
-
-​                   					 					版权声明：本文为博主原创文章，未经博主允许不得转载。					https://blog.csdn.net/CrazyDony/article/details/51983343				
+## 在github上传项目遇到的问题(error: failed to push some refs to 			
 
 ![img](https://img-blog.csdn.net/20160721172014480?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)在命令行中输入:
 
@@ -681,6 +665,14 @@ Counting objects: 35, done. Delta compression using up to 4 threads. Compressing
 git pull --rebase origin master
 
 
+
+## fatal: unable to auto-detect email address (got 'root@iZwz90akesky22ceoc76egZ.(none)')
+
+git config --global user.email "你的邮箱就是git的邮箱"
+
+git config --global user.name "你的用户名"
+
+git config -l
 
 
 
@@ -925,3 +917,103 @@ git config user.email "youremail"
 来源：简书
 
 简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+
+
+
+
+
+
+
+# git linux
+
+yum默认安装目录：/usr/share/git-core 
+
+### 一、安装 Git
+
+　　* 如果你已经安装好了 Git，可以忽略这一步
+
+　　Ubuntu 安装 Git：  apt-get install git  
+
+　　CentOS 安装 Git：  yum install git  
+
+　　查看 Git 版本信息：  git version  
+
+```
+查看系统config
+git config --system --list
+查看当前用户（global）配置
+git config --global  --list
+查看当前仓库配置信息
+git config --local  --list
+查看当前生效的配置
+git config -l，这个时候会显示最终三个配置文件计算后的配置信息
+```
+
+
+
+　　配置 Git 用户信息：
+
+```
+ git config --global user.name "woider"
+ git config --global user.email "woider@gmail.com"
+```
+
+### 二、开启 SSH 服务
+
+　　* 如果你使用的是 CentOS，则默认开启了 SSH，可以忽略这一步
+
+　　Ubuntu 安装 SSH：  apt-get install ssh  
+
+　　查看 SSH 服务状态：  ps -e | grep sshd  
+
+![img](assets/875028-20170310203623232-398417915.png)
+
+↑ sshd 表示 ssh-server 已启动
+
+
+
+### 三、生成 SSH KEY
+
+　　* 使用 ls -al ~/.ssh 命令查看 ssh key 是否存在，若存在则忽略这一步
+
+　　生成 SSH KEY：  ssh-keygen -t rsa -C "woider@gmail.com" 
+
+![img](assets/875028-20170310205245686-444736341.png)
+
+↑ 生成 ssh key 过程中，会让你填写 passphrase，连按三次回车跳过即可
+
+
+
+
+
+### 一、查看 SSH KEY
+
+　　进入 /root/.ssh 目录，查看 id_rsa 和 id_rsa.pub 文件：
+
+```
+ root@localhost:~# cd /root/.ssh
+ root@localhost:~/.ssh# ls -a
+```
+
+![img](assets/875028-20170310213759451-1610436021.png)
+
+↑ id_rsa 为私钥，id_rsa.pub 为公钥
+
+### 二、复制 SSH KEY
+
+　　打开 id_rsa.pub 文件，将内容复制到剪贴板：  vim id_rsa.pub  
+
+![img](assets/875028-20170310214450529-2101344665.png)
+
+↑ SSH KEY 公钥，用于 GitHub 身份验证
+
+### 三、添加 SSH KEY
+
+　　登录 GitHub，打开 Personal settings 页面，选择 SSH and GPG keys 选项：
+
+![img](assets/875028-20170310215743420-2053367294.png)
+
+↑ Title 可以随意填写，Key 中填写刚从 id_rsa.pub 中拷贝的内容
+
+添加 SSH key 之后，Linux 就可以通过 SSH 建立本地 Git 与 GitHub 的连接了。
+
