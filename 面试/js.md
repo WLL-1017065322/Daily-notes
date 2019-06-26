@@ -350,3 +350,208 @@ CookieUtil=｛
 ```
 
 要给li元素绑定click事件，使用事件委托机制的话，就只需要给ul绑定click事件就行了，这样就不需要给每个li'绑定click事件，减小内存占用，提高效率，有兴趣的童鞋可以去看看jQuery的live，bind，on，delegate函数的区别，这几个函数就采用了事件委托机制。
+
+
+
+
+
+
+
+**JavaScript 基础问题**
+
+**1.使以下代码正常运行：**
+
+JavaScript 代码:
+
+```JavaScript
+const a = [1, 2, 3, 4, 5];
+ 
+// Implement this
+a.multiply();
+ 
+console.log(a); // [1, 2, 3, 4, 5, 1, 4, 9, 16, 25]
+```
+
+**2.以下代码在 JavaScript 中返回 false 。 解释一下为什么会这样：**
+
+JavaScript 代码:
+
+```JavaScript
+// false
+0.2 + 0.1 === 0.3
+```
+
+3.JavaScript 中有哪些不同的数据类型？
+
+提示：只有两种类型 – 主要数据类型和引用类型（对象）。 有 6 种主要类型。
+
+**4.解决以下异步代码问题。**
+
+检索并计算属于同一教室中每个学生的平均分数，其中一些ID为75。每个学生可以在一年内参加一门或多门课程。 以下 API 可用于检索所需数据。
+
+JavaScript 代码:
+
+```
+`// GET LIST OF ALL THE STUDENTS``GET /api/students``Response:``[{``    ``"id"``: 1,``    ``"name"``: ``"John"``,``    ``"classroomId"``: 75``}]``// GET COURSES FOR GIVEN A STUDENT``GET /api/courses?filter=studentId eq 1``Response:``[{``   ``"id"``: ``"history"``,``   ``"studentId"``: 1``}, {``   ``"id"``: ``"algebra"``,``   ``"studentId"``: 1``},]``// GET EVALUATION FOR EACH COURSE``GET /api/evaluation/history?filter=studentId eq 1``Response:``{``    ``"id"``: 200,``    ``"score"``: 50,``    ``"totalScore"``: 100``}`
+```
+
+编写一个接受教室 ID 的函数，您将根据该函数计算该教室中每个学生的平均值。该函数的最终输出应该是具有平均分数的学生列表：
+
+JavaScript 代码:
+
+```JavaScript
+[
+  { "id": 1, "name": "John", "average": 70.5 },
+  { "id": 3, "name": "Lois", "average": 67 },
+]
+```
+
+使用普通的 **callbacks** ，**promises** ，**observables**，**generator** 或 **async-wait** 编写所需的函数。尝试使用至少 3 种不同的技术解决这个问题。
+
+**5.使用 JavaScript Proxy 实现简单的数据绑定**
+
+提示：ES Proxy 允许您拦截对任何对象属性或方法的调用。首先，每当更改底层绑定对象时，都应更新 DOM 。
+
+**6.解释 JavaScript 并发模型**
+
+您是否熟悉 Elixir，Clojure，Java 等其他编程语言中使用的任何其他并发模型？
+
+提示：查找事件循环，任务队列，调用栈，堆等。
+
+**7.new 关键字在 JavaScript 中有什么作用？**
+
+提示：在 JavaScript 中，`new` 是用于实例化对象的运算符。 这里的目的是了解知识广度和记忆情况。
+
+另外，请注意 `[[Construct]]` 和 `[[Call]]`。
+
+**8.JavaScript 中有哪些不同的函数调用模式？ 详细解释。**
+
+提示：有四种模式，函数调用，方法调用，`.call()` 和 `.apply()`。
+
+**9.解释任一即将发布新的 ECMAScript 提案。**
+
+提示：比如 2018 的 BigInt，partial 函数，pipeline 操作符 等。
+
+**10.JavaScript 中的迭代器（iterators）和迭代（iterables）是什么？ 你知道什么是内置迭代器吗？**
+
+**11.为什么 JavaScript classes(类)被认为是坏的或反模式？**
+
+这是一个神话吗？它是否遭受了误传？是否有一些有用的用例？
+
+**12.如何在 JSON 中序列化以下对象？**
+
+如果我们将以下对象转换为 JSON 字符串，会发生什么？
+
+JavaScript 代码:
+
+```JavaScript
+const a = {
+    key1: Symbol(),
+    key2: 10
+}
+// What will happen?
+console.log(JSON.stringify(a));
+```
+
+**13.你熟悉 Typed Arrays 吗？ 如果熟悉，请解释他们与 JavaScript 中的传统数组相比的异同？**
+
+**14. 默认参数是如何工作？**
+
+如果我们在调用 `makeAPIRequest` 函数时必须使用 `timeout` 的默认值，那么正确的语法是什么？
+
+JavaScript 代码:
+
+```JavaScript
+function makeAPIRequest(url, timeout = 2000, headers) {   
+    // Some code to fetch data
+}
+```
+
+**15.解释 TCO – 尾调用优化（Tail Call Optimization）。 有没有支持尾调用优化的 JavaScript 引擎？**
+
+提示：截至 2018 年，没有。
+
+------
+
+**JavaScript 前端应用设计问题**
+
+**1.解释单向数据流和双向数据绑定。**
+
+Angular 1.x 基于双向数据绑定，而 React，Vue，Elm 等基于单向数据流架构。
+
+**2.单向数据流架构在哪些方面适合 MVC？**
+
+MVC 拥有大约 50 年的悠久历史，并已演变为 MVP，MVVM 和 MV *。两者之间的相互关系是什么？如果 MVC 是架构模式，那么单向数据流是什么？这些竞争模式是否能解决同样的问题？
+
+**3.客户端 MVC 与服务器端或经典 MVC 有何不同？**
+
+提示：经典 MVC 是适用于桌面应用程序的 Smalltalk MVC。在 Web 应用中，至少有两个不同的数据 MVC 周期。
+
+**4.使函数式编程与面向对象或命令式编程不同的关键因素是什么？**
+
+提示：Currying（柯里化），point-free 函数，partial 函数应用，高阶函数，纯函数，独立副作用，record 类型（联合，代数数据类型）等。
+
+**5.在 JavaScript 和前端的上下文中，函数式编程与响应式编程有什么关系？**
+
+提示：没有正确答案。但粗略地说，函数式编程是关于小型编码，编写纯函数和响应式编程是大型编码，即模块之间的数据流，连接以 FP 风格编写的组件。 FRP – 功能响应式编程（ Functional Reactive Programming）是另一个不同但相关的概念。
+
+**6.不可变数据结构（immutable data structures）解决了哪些问题？**
+
+不可变结构是否有任何性能影响？ JS 生态系统中哪些库提供了不可变的数据结构？这些库的优点和缺点是什么？
+
+提示：线程安全（我们真的需要在浏览器 JavaScript 中担心吗？），无副作用的函数，更好的状态管理等。
+
+**7.大型应用程序是否应使用静态类型？**
+
+1. 如何比较 TypeScript/Flow 与 Elm/ReasonML/PureScript 等 JS 转换语言？这些方法的优缺点是什么？
+2. 选择特定类型系统的主要标准应该是什么？
+3. 什么是类型推断（type inference）？
+4. 静态类型语言和强类型语言有什么区别？在这方面 JavaScript 的本质是什么？
+5. 有你知道的弱类型但静态类型的语言吗？有你知道的动态类型但强类型的语言吗？举例一二。
+
+提示：Structural 与 Nominal 类型系统，类型稳健性，工具/生态系统支持，正确性超过方便。
+
+**8.JavaScript 中有哪些杰出的模块系统（module systems ）？如何评价 ES 模块系统。**
+
+列出在实现不同模块系统之间互操作所涉及的一些复杂性问题（主要对 ES 模块和 CommonJS 互操作感兴趣）
+
+**9.HTTP/2 将如何影响 JavaScript 应用程序打包？**
+
+列出 HTTP/2 与其上一个版本的基本区别。
+
+**10.Fetch API 相对于传统的 Ajax 有哪些改进？**
+
+1. 使用 Fetch API 有那些缺点/难点吗？
+2. 哪些是Ajax 可以做的，而 fetch 不能做的？
+
+**11.如何评论 pull-based 和 push-based 的反应系统。**
+
+讨论概念，含义，用途等。
+
+1. 在这个讨论中加入惰性和及早求值。
+2. 然后在讨论中添加单数和复数值维度。
+3. 最后，讨论值解析的同步和异步性质。
+4. 为JavaScript中可用的每个组合提供示例。
+
+提示：Observable 是惰性的，基于推送的复数值构造，同时具有 async/sync 调度程序。
+
+**12.讨论与 Promise 相关的问题。**
+
+提示：及早求值（eager evaluation），尴尬的取消机制，用 `then()` 方法伪装 `map()` 和 `flatMap()` 等。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
