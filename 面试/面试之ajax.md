@@ -1,6 +1,62 @@
+1、什么是AJAX，为什么要使用Ajax（请谈一下你对Ajax的认识）
+
+2、为什么要用ajax：
+
+3、AJAX最大的特点是什么。
+
+4、请介绍一下XMLhttprequest对象。
+
+5、AJAX技术体系的组成部分有哪些。
+
+6、AJAX应用和传统Web应用有什么不同。
+
+7、AJAX请求总共有多少种CALLBACK。
+
+8.Ajax和javascript的区别。
+
+9、在浏览器端如何得到服务器端响应的XML数据。
+
+10、 XMLHttpRequest对象在IE和Firefox中创建方式有没有不同。
+
+11、介绍一下XMLHttpRequest对象的常用方法和属性。
+
+12、什么是XML
+
+13、XML的解析方式
+
+14、你采用的是什么框架（架包）
+
+15、如果熟悉某种ajax框架，他可能会问到怎样在程序中使用这种框架
+
+DWR框架介绍
+
+16、介绍一下Prototype的$()函数，$F()函数，$A()函数都是什么作用
+
+17、介绍一下XMLHttpRequest对象
+
+18、AJAX的全称是什么？ 介绍一下AJAX？
+
+19、Ajax主要包含了哪些技术？
+
+20、AJAX都有哪些优点和缺点？
+
+21、ajax的缺点
+
+22  首先了解下浏览器的同源策略
+
+23 那么怎样解决跨域问题的呢？
+
+
+
+
+
+
+
 **1、什么是AJAX，为什么要使用Ajax（请谈一下你对Ajax的认识）**
 
 什么是ajax：
+
+Ajax不是一个技术，它实际上是几种技术，每种技术都有其独特这处，合在一起就成了一个功能强大的新技术
 
 AJAX是“Asynchronous JavaScript and XML”的缩写。他是指一种创建交互式网页应用的网页开发技术。
 
@@ -16,6 +72,8 @@ Ajax包含下列技术：
 
 使用 JavaScript 将所有的东西绑定在一起。
 
+
+
 **2、为什么要用ajax：**
 
 Ajax应用程序的优势在于：
@@ -26,21 +84,21 @@ Ajax应用程序的优势在于：
 
 \3. Ajax引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载。
 
-**2、AJAX最大的特点是什么。**
+**3、AJAX最大的特点是什么。**
 
 Ajax可以实现动态不刷新（局部刷新）
 
 就是能在不更新整个页面的前提下维护数据。这使得Web应用程序更为迅捷地回应用户动作，并避免了在网络上发送那些没有改变过的信息。
 
-**3、请介绍一下XMLhttprequest对象。**
+**4、请介绍一下XMLhttprequest对象。**
 
 Ajax的核心是JavaScript对象XmlHttpRequest。该对象在Internet Explorer 5中首次引入，它是一种支持异步请求的技术。简而言之，XmlHttpRequest使您可以使用JavaScript向服务器提出请求并处理响应，而不阻塞用户。通过XMLHttpRequest对象，Web开发人员可以在页面加载以后进行页面的局部更新。
 
-**4、AJAX技术体系的组成部分有哪些。**
+**5、AJAX技术体系的组成部分有哪些。**
 
 HTML，css，dom，xml，xmlHttpRequest，javascript
 
-**5、AJAX应用和传统Web应用有什么不同。**
+**6、AJAX应用和传统Web应用有什么不同。**
 
 在传统的Javascript编程中，如果想得到服务器端数据库或文件上的信息，或者发送客户端信息到服务器，需要建立一个HTML form然后GET或者POST数据到服务器端。用户需要点击”Submit”按钮来发送或者接受数据信息，然后等待服务器响应请求，页面重新加载。
 
@@ -50,7 +108,7 @@ HTML，css，dom，xml，xmlHttpRequest，javascript
 
 通过HTTP Request， 一个web页面可以发送一个请求到web服务器并且接受web服务器返回的信息(不用重新加载页面)，展示给用户的还是通一个页面，用户感觉页面刷新，也看不到到Javascript后台进行的发送请求和接受响应。
 
-**6、AJAX请求总共有多少种CALLBACK。**
+**7、AJAX请求总共有多少种CALLBACK。**
 
 Ajax请求总共有八种Callback
 
@@ -58,7 +116,7 @@ Ajax请求总共有八种Callback
 `onSuccess``onFailure``onUninitialized``onLoading``onLoaded``onInteractive``onComplete``onException`
 ```
 
-**7.Ajax和javascript的区别。**
+**8.Ajax和javascript的区别。**
 
 javascript是一种在浏览器端执行的脚本语言，Ajax是一种创建交互式网页应用的开发技术 ，它是利用了一系列相关的技术其中就包括javascript。
 
@@ -70,15 +128,15 @@ Javascript是由网景公司开发的一种脚本语言，它和sun公司的java
 
 通过XML数据或者字符串
 
-**8、在浏览器端如何得到服务器端响应的XML数据。**
+**9、在浏览器端如何得到服务器端响应的XML数据。**
 
 XMLHttpRequest对象的responseXMl属性
 
-**9、 XMLHttpRequest对象在IE和Firefox中创建方式有没有不同。**
+**10、 XMLHttpRequest对象在IE和Firefox中创建方式有没有不同。**
 
 有，IE中通过new ActiveXObject()得到，Firefox中通过newXMLHttpRequest()得到
 
-**10、介绍一下XMLHttpRequest对象的常用方法和属性。**
+**11、介绍一下XMLHttpRequest对象的常用方法和属性。**
 
 open(“method”,”URL”) 建立对服务器的调用，第一个参数是HTTP请求 方式可以为GET，POST或任何服务器所支持的您想调用的方式。
 
@@ -178,7 +236,7 @@ AJAX的应用使用支持以上技术的web浏览器作为运行平台。这些�
 
 4、基于标准化的并被广泛支持的技术，不需要下载插件或者小程序。
 
-**ajax的缺点**
+**21 ajax的缺点**
 
 1、ajax不支持浏览器back按钮。
 
@@ -189,3 +247,90 @@ AJAX的应用使用支持以上技术的web浏览器作为运行平台。这些�
 4、破坏了程序的异常机制。
 
 5、不容易调试。
+
+
+
+
+
+**22  首先了解下浏览器的同源策略**
+
+   
+
+同源策略/SOP（Same origin policy）是一种约定，由Netscape公司1995年引入浏览器，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指"协议+域名+端口"三者相同，即便两个不同的域名指向同一个ip地址，也非同源。
+
+  
+
+**23 那么怎样解决跨域问题的呢？**
+
+  
+
+**1 通过jsonp跨域，原生实现：**
+
+ 
+
+```
+<script>
+var script = document.createElement('script');
+script.type = 'text/javascript';
+
+// 传参并指定回调执行函数为onBack
+script.src = 'http://www.....:8080/login?user=admin&callback=onBack';
+document.head.appendChild(script);
+
+// 回调执行函数
+function onBack(res) {
+    alert(JSON.stringify(res));
+}
+</script>
+```
+
+ 
+
+**2、document.domain + iframe 跨域**  
+
+ 
+
+此方案仅限主域相同，子域不同的跨域应用场景。
+
+ 
+
+1.）父窗口：(http://www.domain.com/a.html)
+
+  
+
+```
+<iframe id="iframe" src="http://child.domain.com/b.html"></iframe>
+<script>
+document.domain = 'domain.com';
+var user = 'admin';
+</script>
+```
+
+ 
+
+2.）子窗口：(http://child.domain.com/b.html)         
+
+```
+<script>
+document.domain = 'domain.com';
+// 获取父窗口中变量
+alert('get js data from parent ---> ' + window.parent.user);
+</script>
+```
+
+弊端：请看下面渲染加载优化
+
+3、nginx 代理跨域
+
+4、nodejs 中间件代理跨域
+
+5、后端在头部信息里面设置安全域名
+
+
+
+
+
+
+
+
+
