@@ -110,11 +110,167 @@ column-count多列布局
 
 
 
+25 CSS 加载方式有几种？
+
+26@import 有什么作用？如何使用？
+
+27CSS 选择器常见的有几种？
+
+28 id 选择器和 class 选择器的使用场景分别是什么？
+
+29 @charset 有什么作用？
+
+30 简述 src 和 href 的区别？
+
+31 页面导入时，使用 link 和 @import 有什么区别？
 
 
 
 
 
+32 伪类选择器有哪些？
+
+1. **静态、动态伪类选择器**
+
+:link
+:visited
+:focus
+:hover
+:active
+
+\2. **UI 元素伪类选择器：**
+
+```
+:checked
+::selection
+:enabled
+:disabled
+:read-write
+:read-only
+```
+
+3. **结构伪类选择器：**
+
+```
+E:first-child
+E:last-child
+E:nth-child(n)
+E:only-child
+
+E:first-of-type
+E:last-of-type
+E:nth-of-type(n)
+E:only-of-type
+
+:root
+E:not(selector)
+E:empty
+E:target
+```
+
+33 伪元素和伪类的区别？
+
+伪类和伪元素的根本区别在于：**它们是否创造了新的元素(抽象)**。从我们模仿其意义的角度来看，如果需要添加新元素加以标识的，就是伪元素，反之，如果只需要在既有元素上添加类别的，就是伪类。
+
+理解了 伪类，首先是类的一种， 作用于标签本身（状态） 
+
+伪元素首先是元素，作用于内容本身
+
+伪类：用于向某些选择器添加特殊的效果 
+伪元素：用于将特殊的效果添加到某些选择器
+
+CSS3规范中的要求使用双冒号(::)表示伪元素，
+
+伪元素可以理解成“虚假的元素”，它们虽然会在内容元素的前后插入额外的元素，但并不会在文档中生成，在文档的源代码当中并不能够找到他们。
+虽然在结构上是“虚假”的代码，但在表现上和“普通”元素没有什么区别，能够为它们添加任何样式，比如改变文颜色、添加背景、调整字体大小等。
+
+
+
+1. 相同之处：
+
+伪类和伪元素都不出现在源文件和文档树中。也就是说在 html 源文件中是看不到伪类和伪元素的。
+
+2. 不同之处：
+
+伪类其实就是基于普通 DOM 元素而产生的不同状态，他是 DOM 元素的某一特征。伪元素能够创建在 DOM 树中不存在的抽象对象，而且这些抽象对象是能够访问到的。
+
+
+
+34 选择器的优先级是如何计算的？
+
+35 什么是 CSS 继承？哪些属性能继承，哪些不能？
+
+
+
+1. 你有没有使用过视网膜分辨率的图形？当中使用什么技术？
+2. px，em，rem，vw 有什么区别？
+
+简述字体图标的原理，动手实现使用 iconfont 实现字体图标的 demo。
+
+1. 块级元素和行内元素分别有哪些？ 空（void）元素有那些？块级元素和行内元素有什么区别？
+2. IE 盒模型和 W3C 盒模型有什么区别?
+3. 在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例？
+
+
+
+1. line-height: 2; 和 line-height: 200%; 有什么区别?
+2. 在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例。
+3. 行内元素的“边框”、“边界”等“框属性”是由 font-size 还是 line-height 控制？
+4. height=line-height 可以用来垂直居中单行文本？代码怎么实现？
+5. inline-block 有什么特性？
+6. inline-block 在实际工作中有什么作用？
+7. 怎么去除两个按钮中间的缝隙问题？
+8. 一个页面有一排高度不一样的产品图，这时如果我们用 inline-block ，怎样使他们“顶端对齐”？
+
+
+
+1. 让一个元素“看不见”有几种方式？有什么区别？
+2. 单行文本溢出加 ... 如何实现？
+3. 如何在页面上实现一个圆形的可点击区域？
+
+1. 浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响？
+2. 清除浮动指什么？如何清除浮动？两种以上方法。
+
+
+
+1. 有几种定位方式？分别是如何实现定位的？参考点是什么？使用场景是什么？ 
+
+   2 z-index 有什么作用？如何使用？ 
+
+   3. BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明。 
+   4. 4. 在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例？
+
+
+
+1. 如何使用伪元素来清除浮动？
+2. 可以通过哪些方法优化 CSS3 animation 渲染？
+
+1. 如何让块级元素水平居中？如何让行内元素水平居中？如何让 inline-block 元素水平居中？
+2. 垂直上下居中的办法？
+
+
+
+响应式布局原理？
+
+1. 列举你了解的 HTML5、CSS3 新特性？
+2. Canvas 和 SVG 有什么区别？
+
+  1. 渐进增强和优雅降级分别是什么意思？
+  2. 什么是 CSS hack？在哪个网站查看标签（属性）的浏览器兼容情况？
+  3. IE6、7 的 hack 写法是？
+  4. 尽可能多的列举浏览器兼容的处理范例？
+  5. css reset 是什么？css 预编译器是什么？后编译器（post css）是什么？
+  6. css reset 和 normalize.css 有什么区别？
+  7. 尽可能多的写出浏览器兼容性问题？
+  8. 如何让 Chrome 浏览器显示小于 12px 的文字？
+  9. CSS 预处理器的比较：less、sass？
+ 10. 常见兼容性问题？
+
+1. 列举 CSS 编码规范？
+2. 编码规范的作用是什么？列举 5 条以上编码规范。
+
+1. 什么是盒模型？
+2. CSS 的属性 box-sizing 有什么值？分别有什么作用？
 
 
 
@@ -1113,4 +1269,759 @@ CSS sprites在国内很多人叫css精灵，是一种网页图片应用处理方
   ```
 
 #
+
+
+
+
+
+
+
+
+
+
+
+25 CSS 加载方式有几种？
+
+1. 外部样式表：通过`<link>`“链入” CSS；外联
+
+```
+<link rel="stylesheet" href="style.css">
+```
+
+2. 外部样式表：通过 @import “导入”样式； 导入
+
+```
+<style>
+@import url("index.css");
+@import url(index.css);
+@import "index2.css"; 
+</style>
+```
+
+3. 内部样式表：放在 head 元素内的 <style> 标签中；内联
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HTML表单</title>
+  <style>
+    #txa {
+      width: 300px;
+      height: 200px;
+      margin-left: -12px;
+        }
+  </style>
+</head>
+<body>
+...
+```
+
+4. 直接写在元素开始标签的 style 属性中(不推荐)。 内嵌
+
+```
+<p style="background: yellow; font-family: sans-serif;">Oliver 是个好人!</p>
+```
+
+
+
+26@import 有什么作用？如何使用？
+
+@import 用于从其他样式表导入样式规则，告诉 CSS 引擎引入一个外部样式表。
+
+**用法：**
+
+外部样式表：通过 @import “导入”样式。
+
+```
+<style>
+@import url("index.css");
+@import url(index.css);
+@import "index2.css"; 
+</style>
+```
+
+
+
+27CSS 选择器常见的有几种？
+
+1. **元素选择器 **标签选择器
+
+2. **ID 选择器**
+
+3. **类选择器** class
+
+4. **通配选择器**
+
+5. **属性选择器**
+
+       input[type = 'text'] {background-color: red}
+       input[type = 'password'] {background-color: pink}
+
+   
+
+6. **组合选择器**
+
+7. 1. 多元素选择器
+   2. 后代选择器
+   3. 子元素选择器
+   4. 直接相邻元素选择器
+   5. 普通相邻元素选择器
+
+8. | A, B  | 选中匹配 A 或/和 B 的元素                               |
+   | ----- | ------------------------------------------------------- |
+   | A B   | 选中匹配 B 且为匹配 A 的元素的后代元素(A B之间空格分开) |
+   | A > B | 选中匹配 B 且为匹配 A 的元素的直接子元素                |
+   | A + B | 选中匹配 B 且为匹配 A 的元素的下一相邻元素              |
+   | A ~ B | 选中匹配 B 且为匹配 A 的元素的下 N 个相邻元素           |
+
+9. **伪类选择器**
+
+10. 1. UI 元素伪类选择器
+    2. 结构伪类选择器
+
+        a:link{color:green ;font-size: 50px}
+        a:hover{color:pink;font-size: 50px}
+        a:active{color:yellow;font-size: 50px}
+        a:visited{color:red;font-size: 50px}
+多重选择器
+
+```
+<div class="one two"></div>
+
+.one.two{}     /*两个 class 中沒有空格*/
+one 和 two 中间没有包含空格，
+表示某个区块必须同时具有 one 和 two 的 class 时，才能被 CSS 所选择到到。
+```
+
+
+
+
+
+28 id 选择器和 class 选择器的使用场景分别是什么？
+
+​	想要对多个元素使用某个样式时，就把这些元素都加入到这个“类”里，就会用到 class ；
+
+但如果只有一个元素需要加这个样式，那就用 id 。
+
+
+
+
+
+29 @charset 有什么作用？
+
+@charset 是 CSS **@**规则, 指定样式表中使用的字符编码。
+
+它必须是样式表中的第一个元素，而且前面不得有任何字符。
+
+如果有多个 @charset **@**规则被声明，只有第一个会被使用，而且不能在 HTML 元素或 HTML 页面的字符集相关 <style> 元素内的样式属性内使用。
+
+此 **@**规则 在某些 CSS 属性中使用非 ASCII 字符时非常有用，例如 content。
+
+另外，CSS注释中，如果使用了中文，不加以指定字符编码，若和编码不一致，则可能在浏览器中显示乱码。
+
+
+
+30 简述 src 和 href 的区别？
+
+src用于替换当前元素，href用于在当前文档和引用资源之间确立联系。
+
+**href** 是 Hypertext Reference 的缩写，表示超文本引用。用来建立当前元素和文档之间的链接。常用的有：link、a。
+
+例如：
+
+```
+<link href="reset.css" rel=”stylesheet“/>
+```
+
+浏览器会识别该文档为 css 文档，并行下载该文档，并且不会停止对当前文档的处理。这也是建议使用 link，而不采用 @import 加载 css 的原因。
+
+**src** 是 source 的缩写，src 的内容是页面必不可少的一部分，是引入。src 指向的内容会嵌入到文档中当前标签所在的位置。常用的有：img、script、iframe。
+
+例如：
+
+```
+<script src="script.js"></script>
+```
+
+当浏览器解析到该元素时，会暂停浏览器的渲染，知道该资源加载完毕。这也是将 js 脚本放在底部而不是头部得原因。
+
+简而言之，src 用于替换当前元素；href 用于在当前文档和引用资源之间建立联系。
+
+
+
+31 页面导入时，使用 link 和 @import 有什么区别？
+
+1. link 属于 XHTML 标签，除了加载 CSS 外，还能用于定义 RSS，定义 rel 连接属性等作用；而 @import 是 CSS 提供的，只能用于加载 CSS；
+
+2. 页面被加载的时，link 会同时被加载，而 @import 引用的 CSS 会等到页面被加载完再加载；
+
+3. @import 是 CSS2.1 提出的，只在 IE5 以上才能被识别，而 link 是 XHTML 标签，无兼容问题。
+4. 使用dom控制样式时的差别。当使用javascript控制dom去改变样式的时候，只能使用link标签，因为@import不是dom可以控制的。
+
+
+
+
+
+
+
+
+
+32 伪类选择器有哪些？
+
+1. **静态、动态伪类选择器**
+
+:link
+:visited
+:focus
+:hover
+:active
+
+\2. **UI 元素伪类选择器：**
+
+```
+:checked
+::selection
+:enabled
+:disabled
+:read-write
+:read-only
+```
+
+3. **结构伪类选择器：**
+
+```
+E:first-child
+E:last-child
+E:nth-child(n)
+E:only-child
+
+E:first-of-type
+E:last-of-type
+E:nth-of-type(n)
+E:only-of-type
+
+:root
+E:not(selector)
+E:empty
+E:target
+```
+
+33 伪元素和伪类的区别？
+
+伪类和伪元素的根本区别在于：**它们是否创造了新的元素(抽象)**。从我们模仿其意义的角度来看，如果需要添加新元素加以标识的，就是伪元素，反之，如果只需要在既有元素上添加类别的，就是伪类。
+
+理解了 伪类，首先是类的一种， 作用于标签本身（状态） 
+
+伪元素首先是元素，作用于内容本身
+
+伪类：用于向某些选择器添加特殊的效果 
+伪元素：用于将特殊的效果添加到某些选择器
+
+CSS3规范中的要求使用双冒号(::)表示伪元素，
+
+伪元素可以理解成“虚假的元素”，它们虽然会在内容元素的前后插入额外的元素，但并不会在文档中生成，在文档的源代码当中并不能够找到他们。
+虽然在结构上是“虚假”的代码，但在表现上和“普通”元素没有什么区别，能够为它们添加任何样式，比如改变文颜色、添加背景、调整字体大小等。
+
+
+
+1. 相同之处：
+
+伪类和伪元素都不出现在源文件和文档树中。也就是说在 html 源文件中是看不到伪类和伪元素的。
+
+2. 不同之处：
+
+伪类其实就是基于普通 DOM 元素而产生的不同状态，他是 DOM 元素的某一特征。伪元素能够创建在 DOM 树中不存在的抽象对象，而且这些抽象对象是能够访问到的。
+
+
+
+34 选择器的优先级是如何计算的？
+
+CSS 选择器的优先级，**从高到低**分别是：
+
+1. 在属性后面使用 !important 会覆盖页面内任何位置定义的元素样式；
+2. 作为 style 属性写在元素标签上的内联样式；
+3. id 选择器；
+4. 类选择器；
+5. 伪类选择器；
+6. 属性选择器；
+7. 标签选择器；
+8. 通配符选择器（通用选择器）；
+9. 浏览器自定义。
+
+
+
+35 什么是 CSS 继承？哪些属性能继承，哪些不能？
+
+一般来讲，如果样式会影响你的文本外观，则所有这些样式都能“继承”。如：字体颜色 color 、所有与字体相关的属性：
+
+```
+font-family
+font-size
+font-weight
+font-style
+```
+
+
+
+而大多数 “框模型属性” 就不能继承（包括外边距、内边距、背景和边框），比如给\<body> 元素加了一个边框样式，不代表我们希望这个“身体”里所有的元素都有“边框”。
+
+> CSS继承可定义为特定的css属性向下传递到子孙元素，就是指被包在内部的标签将拥有外部标签的样式，即子元素可以继承父元素的属性。
+
+一、能继承的属性
+
+1. 字体系列属性:font、font-family、font-weight、font-size、font-style;
+
+2. 文本系列属性:
+
+（1）内联元素：color、line-height、word-spacing、letter-spacing、text-transform;
+
+（2）块级元素：text-indent、text-align;
+
+3. 元素可见性：visibility
+
+4. 表格布局属性：caption-side、border-collapse、border-spacing、empty-cells、table-layout;
+
+5. 列表布局属性：list-style
+
+6. 生成内容属性：quotes
+
+7. 光标属性：cursor
+
+8. 页面样式属性：page、page-break-inside、windows、orphans;
+
+9. 声音样式属性：speak、speech-rate、volume、voice-family、pitch、stress、elevation;
+
+二、不能继承的属性
+
+1. display：规定元素应该生成的框的类型；
+
+2. 文本属性：vertical-align、text-decoration;
+
+3. 盒子模型的属性：width、height、margin 、border、padding;
+
+4. 背景属性：background、background-color、background-image;
+
+5. 定位属性：float、clear、position、top、right、bottom、left、min-width、min-height、max-width、max-height、overflow、clip;
+
+6. 生成内容属性：content、counter-reset、counter-increment;
+
+7. 轮廓样式属性：outline-style、outline-width、outline-color、outline;
+
+8. 页面样式属性：size、page-break-before、page-break-after;
+
+9. 声音样式属性：pause、cue、play-during;
+
+
+
+
+
+
+
+36 你有没有使用过视网膜分辨率的图形？当中使用什么技术？
+
+用过（听说过/了解过），“视网膜屏幕 retina”诞生后，旧有平台的图像如果根据其实际像素在视网膜屏幕中显示时，字体、图标等就会变得特别小。
+
+为了适应实际使用体验和兼容性，厂商发展出了“**像素合并技术**”（输出来的图像、文字比以前更细腻，因为可以显示的细节更多），过去 1px 的面积包含了更多的像素单位。
+
+
+
+
+
+37 px，em，rem，vw 有什么区别？
+
+**px** 像素（Pixel）：相对长度单位。像素 px 是相对于显示器屏幕分辨率而言的。
+
+**em** : 相对长度单位，相对于父元素字体大小，1em 被定义为一种给定字体的 font-size 值。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。
+
+**rem** : rem——root em，是相对于根元素 <html> 的字体大小单位。
+
+**vw** : 1vw 为视口宽度的 1%。
+
+简述字体图标的原理，动手实现使用 iconfont 实现字体图标的 demo。
+
+
+字体图标实现的原理在于浏览器对 unicode 码的解析。
+
+我们在编写 HTML 文档时，<meta charset="utf-8"> 这个标签是必须指定的，这是为了告诉浏览器，你应该用 utf-8 这种 unicode 来解码。
+
+换句话说，即使我们 HTML 文档里的文字全部直接用 unicode 码来写也是完全没问题的——unicode 码，可以认为是世界上任意一种文字的特定编号 。
+
+如果这样的话，基于“一个国家的文字，其他国家的人看来就是图标”这个点，那我们制作出来的任意“图标”也是都可以在页面上展示，并像“文字”一样被操作的。
+
+只是一般的字体图标都不是现有的文字，都是一些流出来可扩展的 unicode 码，换句话说，这些码你可以任意添加东西，但它不是已有的标准。
+
+因此你需要用 @font-face 规则去声明一个字体。
+
+**iconfont 实现字体图标的 demo****：**
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iconfont 实现字体图标</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1159697_xi0iamlv0u.css">
+</head>
+<body>
+    <span class="iconfont icon-web"></span>
+</body>
+</html>
+```
+
+
+
+
+
+
+
+
+
+38 块级元素和行内元素分别有哪些？ 空（void）元素有那些？块级元素和行内元素有什么区别？
+
+
+
+**块级元素和行内元素的区别**：
+
+- 行内元素不可以设置宽高，不独占一行；
+- 块级元素可以设置宽高，独占一行。
+
+```
+//块级元素
+ <address>
+ <article>
+ <aside>
+ <audio> 
+ <blockquote>
+ <canvas> 
+ <dd>
+ <div>
+ <dl>
+ <dt>
+ <fieldset>
+ <figure>
+ <footer>
+ <form>
+ <h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+<header>
+<hgroup>
+<hr>
+<nav>
+<ol>
+<p>
+<pre>
+<section>
+<table>
+<ul>
+
+//行内元素
+b, big, i, small, tt
+abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var
+a, bdo, br, img, map, object, q, script, span, sub, sup
+button, input, label, select, textarea
+
+//空（void）元素br link meta
+<area>
+<base>
+<br>==
+<col>
+<embed>
+<hr>
+<img>
+<input>
+<link> ===
+<meta> ===
+<param>
+<source>
+<track>
+<wbr>
+```
+
+
+
+
+
+
+
+39 IE 盒模型和 W3C 盒模型有什么区别?
+
+ie6 ie模型
+
+IE6/7/8 怪异模式下（不添加 doctype）就使用的 IE 盒模型。
+
+可以看到IE的盒模型与W3C盒模型的区别在与width的计算
+
+标准盒模型中 padding border 所占空间不在 width/height 范围内，而 IE 盒模型的 width 包括 content 尺寸+ padding + border。
+
+![W3C盒模型和IE盒模型](assets/20150629102231720)
+
+
+
+IE6/7/8 怪异模式下（不添加 doctype）就使用的 IE 盒模型。
+
+IE盒模型:width(宽度）=padding+border(边框）+content(内容宽度）；
+
+W3C盒模型:width(宽度）=content(内容宽度）；
+
+ie6 7 8 怪异模式（不添加doctype)的情况下使用IE盒模型，宽度=padding+border(边框）+content(内容宽度）；
+
+chrome ie6 7 9(添加doctype)的情况下使用W3C盒模型，宽度=content(内容宽度）；
+
+#### {box-sizing:border-box}的作用是什么呢？
+
+- box-sizing:content-box W3C盒模型；
+- box-sizing:border-box IE盒模型；
+
+
+
+40 在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例？ 4 
+
+1. 兄弟元素合并：当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并
+
+   
+
+   ![img](https:////upload-images.jianshu.io/upload_images/3704824-a588d9f76c5cb3fe.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/549/format/webp)
+
+   360截图20161129201348082.jpg
+
+   2父子间合并：当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。
+
+   
+
+   ![img](https:////upload-images.jianshu.io/upload_images/3704824-20a7394b744ae6f4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/540/format/webp)
+
+   
+
+   3空元素：假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并
+
+   
+
+   ![img](https:////upload-images.jianshu.io/upload_images/3704824-379d268546af666a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/544/format/webp)
+
+   
+
+   4如果这个外边距遇到另一个元素的外边距，它还会发生合并：
+
+   
+
+   ![img](https:////upload-images.jianshu.io/upload_images/3704824-56beb170bb4b8c87.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/532/format/webp)
+
+
+
+**如何合并：**
+
+1. 两个相邻的外边距都是正数时，合并结果是它们两者之间较大的值。
+2. 两个相邻的外边距都是负数时，合并结果是两者绝对值的较大值。
+3. 两个外边距一正一负时，合并结果是两者的相加的和。
+
+
+
+**解决外边距合并的办法：**
+
+1. 对于兄弟元素：1 设置浮动，2 display: inline-block; 3 或使其父元素均形成 BFC 可防止边距合并（如 overflow: hidden; ）。
+2. 对于父子间的元素：可以给父元素设置 border 或 padding 属性来防止合并。
+3. 对于空元素：设置 border 或 padding 属性或 overflow: hidden; 等（形成 BFC）来防止合并。
+
+**父子外边距合并范例：**
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>父子外边距合并范例</title>
+  <style>
+    .parent {
+        height: 200px;
+        background: blue;
+        margin-top: 50px;
+    }
+    .child {
+        height: 50px;
+        background: red;
+        margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+      <div class="child"></div>
+  </div>
+</body>
+</html>
+```
+
+
+
+
+
+
+
+
+
+41 line-height: 2; 和 line-height: 200%; 有什么区别?
+
+其实区别就在于继承的问题上。150%是根据父元素的字体大小计算出行高，并且子元素依然沿用这个计算后的行高。而1.5则是根据子元素自己字体的大小去乘以1.5来计算行高。另，1.5em等也是按照150%的情况来算的。
+
+
+
+line-height: 2  表示单行文本的行高为它本身的两倍
+ line-height: 200% 表示单行文本的行高为系统默认字体的200%
+ **在继承性上： 对父元素设置了**
+
+**line-height: 2后，父元素的子元素会继承line-height: 2这个属性，子元素的行高都是自身高度的2倍，是相对大小，子元素的字体大小不同，行高也会不同； 对父元素设置了line-height: 200%后，父元素的子元素会继承系统默认字体的200%，是一个固定的值，是固定大小，子元素的字体大小不同，行高都是固定某个值**
+
+
+
+- line-height: 2; 写在父容器中，那么子元素的行高都是自身高度的 2 倍，是相对大小。子元素的字体大小不同，行高也会不同。
+- line-height: 200%; 写在父容器中，那么浏览器会立刻计算出行高的具体值，假如父容器的默认字体大小 16px ，那么计算得到的行高就是 2×16px=32px ，子元素的行高都会继承这个 32px ，是固定大小。子元素的字体大小不同，行高都是固定某个值。
+
+
+
+42 在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例。
+
+42 行内元素的“边框”、“边界”等“框属性”是由 font-size 还是 line-height 控制？
+
+对于行内元素来说，上下的 margin padding 不生效，只有左右的 margin padding 生效！
+
+上下 padding 只是撑开了边框，对高度是没有影响的。你对他加一些边框和背景色，他也可以看得到变化，但实质上对高度没有影响。
+
+所以，行内元素的“边框”、“边界”是由 font-size 而不是 line-height 控制。
+
+
+
+43 height=line-height 可以用来垂直居中单行文本？代码怎么实现？
+
+height=line-height 可以用来垂直居中单行文本。
+
+```
+p {
+  width: 300px; 
+  border: 1px solid blue;
+  height: 50px;
+  line-height: 50px;
+}
+```
+
+
+
+44 inline-block 有什么特性？
+
+- 既呈现 inline 的特性（不占据一整行，宽度由内容宽度决定）；
+- 又呈现 block特性（可设置宽高，内外边距）。
+
+45 inline-block 在实际工作中有什么作用？
+
+如果看到页面上有一排并列的按钮，如果不用浮动，就可以用 inline-block。
+
+
+
+46 怎么去除两个按钮中间的缝隙问题？
+
+设置*{margin: 0,padiing:0}
+
+之所以有空隙，是因为 html 文档里边两个 span 之间有很多空白字符，被浏览器当做一个，故会有空隙。
+
+解决方式有 2 种：
+
+```
+//第一种是在 html 里边把这个空格去掉。
+<div class="wrap">
+  <span class="box">hello，Oli的前端一万小时</span><span class="box">hello，Oli的前端一万小时</span>
+</div>
+
+//第二种是把包含两个 span 的 div 字体先设置为 0（这里的空白字符就没有宽度高度，不占位），然后再在 box 里边去设置回去。
+body {
+   text-align:center;
+}
+.wrap {
+  font-size: 0;
+}
+.box {
+   border:1px solid;
+   width: 100px;
+   display: inline-block;
+   font-size: 14px;
+```
+
+
+
+1. 一个页面有一排高度不一样的产品图，这时如果我们用 inline-block ，怎样使他们“顶端对齐”？
+
+用 **vertical-align** 属性：
+
+```
+body {
+  text-align:center;
+}
+.wrap {
+  font-size: 0;
+}
+.box {
+  border: 1px solid;
+  width: 100px;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+}
+.b1 {
+  padding: 40px;
+}
+.b2 {
+  padding: 10px;
+}
+```
+
+
+
+
+
+1. 让一个元素“看不见”有几种方式？有什么区别？
+2. 单行文本溢出加 ... 如何实现？
+3. 如何在页面上实现一个圆形的可点击区域？
+
+1. 浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响？
+2. 清除浮动指什么？如何清除浮动？两种以上方法。
+
+
+
+1. 有几种定位方式？分别是如何实现定位的？参考点是什么？使用场景是什么？ 
+
+   2 z-index 有什么作用？如何使用？ 
+
+   3. BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明。 
+   4. 4. 在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例？
+
+
+
+1. 如何使用伪元素来清除浮动？
+2. 可以通过哪些方法优化 CSS3 animation 渲染？
+
+1. 如何让块级元素水平居中？如何让行内元素水平居中？如何让 inline-block 元素水平居中？
+2. 垂直上下居中的办法？
+
+
+
+响应式布局原理？
+
+1. 列举你了解的 HTML5、CSS3 新特性？
+2. Canvas 和 SVG 有什么区别？
+
+1. 渐进增强和优雅降级分别是什么意思？
+2. 什么是 CSS hack？在哪个网站查看标签（属性）的浏览器兼容情况？
+3. IE6、7 的 hack 写法是？
+4. 尽可能多的列举浏览器兼容的处理范例？
+5. css reset 是什么？css 预编译器是什么？后编译器（post css）是什么？
+6. css reset 和 normalize.css 有什么区别？
+7. 尽可能多的写出浏览器兼容性问题？
+8. 如何让 Chrome 浏览器显示小于 12px 的文字？
+9. CSS 预处理器的比较：less、sass？
+10. 常见兼容性问题？
+
+1. 列举 CSS 编码规范？
+2. 编码规范的作用是什么？列举 5 条以上编码规范。
+
+1. 什么是盒模型？
+2. CSS 的属性 box-sizing 有什么值？分别有什么作用？
 

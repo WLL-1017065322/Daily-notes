@@ -1,1 +1,0 @@
-This folder will be replace / removed during update / unisntall. Do not write yourr files here.
